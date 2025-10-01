@@ -1,0 +1,41 @@
+--ValidWickets
+ValidWickets = 
+COUNTROWS(
+    FILTER(
+        deliveries,
+        deliveries[is_wicket] = 1
+        && deliveries[dismissal_kind] IN { "caught", "bowled", "lbw", "stumped", "caught and bowled", "hit wicket" }
+    )
+)
+
+
+--CleanMatchType
+CleanMatchType = 
+SWITCH(
+    TRUE(),
+    matches[match_type] = "Elimination Final", "Eliminator",
+    matches[match_type]  -- keep all others as-is
+)
+
+
+--CleanVenue
+CleanVenue = 
+SWITCH(TRUE(),
+    CONTAINSSTRING(matches[venue], "Wankhede"), "Wankhede Stadium",
+    CONTAINSSTRING(matches[venue], "Chidambaram"), "MA Chidambaram Stadium, Chepauk",
+    CONTAINSSTRING(matches[venue], "Eden Gardens"), "Eden Gardens",
+    CONTAINSSTRING(matches[venue], "Punjab Cricket Association"), "Punjab Cricket Association IS Bindra Stadium, Mohali",
+    CONTAINSSTRING(matches[venue], "M Chinnaswamy") || CONTAINSSTRING(matches[venue], "M.Chinnaswamy"), "M Chinnaswamy Stadium",
+    CONTAINSSTRING(matches[venue], "Rajiv Gandhi International Stadium"), "Rajiv Gandhi International Stadium, Uppal",
+    CONTAINSSTRING(matches[venue], "Dr DY Patil"), "Dr DY Patil Sports Academy, Mumbai",
+    CONTAINSSTRING(matches[venue], "Sawai Mansingh"), "Sawai Mansingh Stadium, Jaipur",
+    CONTAINSSTRING(matches[venue], "Sharjah"), "Sharjah Cricket Stadium",
+    CONTAINSSTRING(matches[venue], "Narendra Modi Stadium"), "Narendra Modi Stadium, Ahmedabad",
+    matches[venue]  -- default: keep original
+)
+
+
+--Toss->match_winner
+Measure = COUNTROWS(FILTER(matches, matches[toss_winner] =  matches[winner]))
+
+
