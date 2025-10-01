@@ -1,4 +1,6 @@
-🏏 IPL Analytics Dashboard
+# 🏏 IPL Analytics Dashboard
+
+An end-to-end IPL Data Analytics Project using MySQL and Power BI.
 
 <font size="4">An end-to-end Data Analytics Project analyzing IPL matches and deliveries using MySQL and Power BI.</font>
 
