@@ -20,3 +20,9 @@ WHERE winner IS NOT NULL
   AND winner <> 'NA'
 GROUP BY season, team
 ORDER BY season, wins DESC;
+
+--wins if wins the toss
+SELECT toss_decision, COUNT(*) AS matches, 
+       SUM(CASE WHEN toss_winner = winner THEN 1 ELSE 0 END) AS wins_after_toss
+FROM matches
+GROUP BY toss_decision;
