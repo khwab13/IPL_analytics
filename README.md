@@ -79,7 +79,7 @@ The dataset consists of two CSV files:
 ## 📸 **Dashboard Preview**  
 
 
-<img width="1353" height="745" alt="Screenshot 2025-10-01 155749" src="https://github.com/user-attachments/assets/fdc57ffa-8033-4acc-aaff-9308e67e71c7" />
+<img width="1000" height="500" alt="Screenshot 2025-10-01 155749" src="https://github.com/user-attachments/assets/fdc57ffa-8033-4acc-aaff-9308e67e71c7" />
 ---
 
 ## 🏅 **Key Insights**  
