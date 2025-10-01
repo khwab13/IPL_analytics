@@ -1,116 +1,128 @@
-🏏 IPL Analytics with MySQL & Power BI
-📌 Project Overview
+🏏 IPL Analytics Dashboard
 
-This project analyzes Indian Premier League (IPL) data using MySQL for data cleaning & transformations and Power BI for interactive visualizations.
-It covers match outcomes, player performance, team insights, and venue statistics to build a complete end-to-end data analytics pipeline.
+<font size="4">An end-to-end Data Analytics Project analyzing IPL matches and deliveries using MySQL and Power BI.</font>
 
-📂 Project Structure
-ipl-analytics-powerbi-mysql/
-│── data/                     # Raw data files (matches.csv, deliveries.csv)
-│── sql/                      # SQL scripts for cleaning & analysis
-│── powerbi/                  # Power BI dashboard & DAX measures
-│── images/                   # Dashboard screenshots
-│── README.md                 # Project documentation
+🚀 Project Overview
 
-⚙️ Tech Stack
+This project demonstrates how raw IPL datasets can be transformed into actionable insights.
 
-Database: MySQL 8.0
+Key Highlights:
+
+✅ Data cleaning & transformation using MySQL
+
+✅ Aggregated tables for matches and deliveries
+
+✅ SQL queries for team, player, and venue insights
+
+✅ Interactive Power BI dashboard with slicers, charts, and tables
+
+✅ Star-schema data modeling for efficient relationships
+
+🗂️ Dataset
+
+Matches Data: Match-level details including season, teams, venue, result, and player of the match.
+
+Deliveries Data: Ball-by-ball details including batter, bowler, runs, wickets, dismissal kind, and extras.
+
+🛠️ Tech Stack
+
+Database: MySQL
 
 Visualization: Power BI
 
 Languages: SQL, DAX
 
-Data Sources: IPL matches & ball-by-ball deliveries datasets
+Version Control: Git & GitHub
 
-📊 Key Analyses
-✅ Data Cleaning & Standardization (SQL)
+⚙️ Data Cleaning & Transformation
 
-Standardized team names (e.g., Kings XI Punjab vs Punjab Kings).
+Standardized inconsistent team names (e.g., Delhi Capitals / Delhi Daredevils → Delhi Daredevils)
 
-Consolidated venues (e.g., Feroz Shah Kotla → Arun Jaitley Stadium).
+Removed nulls and NA values
 
-Converted super over, dates, targets into consistent formats.
+Consolidated team, season, and venue tables for consistency
 
-✅ Team & Match Insights
+Calculated final winners for each season
 
-Wins by team per season.
+Pre-aggregated top players (batsmen & bowlers) and team performance tables for Power BI
 
-Final wins & champions across seasons.
+📊 Analysis & Insights
+Team Performance
 
-Toss decisions & their impact on match outcomes.
+Computed total wins per team per season
 
-✅ Player Insights
+Analyzed toss decision impact on match outcomes
 
-Top 10 players with most Player of the Match awards.
+Determined season champions
 
-Season-wise Orange Cap (most runs scorer).
+Player Performance
 
-Season-wise Purple Cap (most wickets taker).
+Top Batsmen per season (Orange Cap winners)
 
-✅ Venue Insights
+Top Bowlers by wickets per season (Purple Cap winners)
 
-Venues with most matches played.
+Venue & Match Insights
 
-Teams with best win ratios at specific venues.
+Most frequently played venues
+
+Highest margin wins
+
+Head-to-head team comparisons
 
 📈 Power BI Dashboard
 
-The Power BI dashboard includes:
+Interactive Dashboard Features:
 
-Team Performance Over Seasons 📉
+Multi-page visualization with KPI cards, bar charts, line charts, matrices, and tables
 
-Player Awards & Achievements 🏅
+Slicers: Team, Season, Player, Venue
 
-Top Venues & Match Distribution 🏟️
+Dynamic Measures: Total runs, wickets, matches, final wins per team
 
-Filters/Slicers: Season, Team, Venue
+Bridge table setup: Filters both team1 and team2 with a single team slicer
 
-📌 Example Screenshot:
+Conditional formatting and tooltips for enhanced insights
+
+Dashboard Pages:
+
+Overview / KPIs
+
+Team Performance
+
+Player Performance
+
+Match & Venue Insights
+
+Dynamic Trends (runs & wickets over seasons)
+
+📌 The Power BI .pbix file is included in this repo for interactive exploration.
+
+📂 Project Structure
+ipl-analytics/
+├── sql/                 # SQL scripts for data cleaning, table creation, and analysis
+├── datasets/            # CSVs: matches.csv and deliveries.csv
+├── pbix/                # Power BI dashboard file
+└── README.md            # Project documentation
+
+🎯 How to Run
+
+Clone the repository:
+
+git clone https://github.com/your-username/ipl-analytics.git
 
 
-🚀 How to Run
-1️⃣ Setup MySQL
+Import the SQL scripts into MySQL to create cleaned and aggregated tables.
 
-Import data using scripts in /sql/02_load_data.sql
+Connect Power BI Desktop to MySQL via ODBC or MySQL connector.
 
-Clean and transform using /sql/03_cleaning.sql
+Load the .pbix file to explore the pre-built dashboard.
 
-2️⃣ Power BI
+🏅 Key Insights
 
-Connect Power BI to MySQL
+Mumbai Indians and Chennai Super Kings dominate IPL history 🏆
 
-Import cleaned tables (matches, deliveries)
+Toss decision has limited overall impact on match outcomes
 
-Add DAX measures from powerbi/dax_measures.txt
+Venues like Eden Gardens & Wankhede Stadium host the most matches
 
-Build visuals as per requirements
-
-📂 SQL Files
-
-01_create_tables.sql → Create staging & final tables
-
-02_load_data.sql → Load raw CSVs into MySQL
-
-03_cleaning.sql → Standardize & clean data
-
-04_analysis_team_wins.sql → Team wins per season
-
-05_analysis_players.sql → Player performance queries
-
-06_analysis_venues.sql → Venue-based insights
-
-📂 Power BI Files
-
-IPL_Dashboard.pbix → Main dashboard file
-
-dax_measures.txt → Custom DAX calculations
-
-📌 Learnings
-
-Hands-on experience with data cleaning in SQL
-
-Writing advanced queries for sports analytics
-
-Creating interactive dashboards with Power BI
-
-Data storytelling with real-world datasets
+Player performances vary significantly by season
