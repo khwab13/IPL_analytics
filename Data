@@ -1,7 +1,0 @@
-https://www.kaggle.com/datasets/patrickb1912/ipl-complete-dataset-20082020
-
-deliveries.csv
-matches.csv
-
-cp matches.csv data/
-cp deliveries.csv data/
