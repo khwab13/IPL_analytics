@@ -1,4 +1,4 @@
-<img width="1353" height="745" alt="Screenshot 2025-10-01 155749" src="https://github.com/user-attachments/assets/fdc57ffa-8033-4acc-aaff-9308e67e71c7" /># 🏏 IPL Analytics Dashboard  
+# 🏏 IPL Analytics Dashboard  
 
 <font size="4">An end-to-end **Data Analytics Project** on IPL matches and deliveries using **MySQL** and **Power BI**.</font>  
 
@@ -78,8 +78,8 @@ The dataset consists of two CSV files:
 
 ## 📸 **Dashboard Preview**  
 
-![IPL Dashboard](Screenshot 2025-10-01 155749.png…)  
 
+<img width="1353" height="745" alt="Screenshot 2025-10-01 155749" src="https://github.com/user-attachments/assets/fdc57ffa-8033-4acc-aaff-9308e67e71c7" />
 ---
 
 ## 🏅 **Key Insights**  
